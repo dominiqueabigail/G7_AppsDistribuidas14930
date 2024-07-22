@@ -1,0 +1,116 @@
+.clase {
+  padding: 20px;
+}
+
+.flex-agregar-boton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.boton-tabla {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-tabla.agregar {
+  background-color: #426a4b;
+}
+
+.boton-tabla:hover {
+  background-color: #0056b3;
+}
+
+.usuario-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.usuario-tabla th, .usuario-tabla td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  text-align: left;
+}
+
+.usuario-tabla th {
+  background-color: #f8f9fa;
+}
+
+.icon-action {
+  cursor: pointer;
+  margin-right: 10px;
+  color: #000000;
+}
+
+.icon-action:hover {
+  color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #dc3545;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:nth-child(1) {
+  background-color: #28a745;
+}
+
+.modal-buttons button:nth-child(2) {
+  background-color: #000000;
+}
+
+.modal-buttons button:nth-child(3) {
+  background-color: #dc3545;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.8;
+}

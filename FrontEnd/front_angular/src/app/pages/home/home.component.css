@@ -1,0 +1,56 @@
+/* Estilo general para el contenedor principal */
+.grid-principal {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo para los botones del navbar */
+.botones-nivel1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre botones */
+}
+
+/* Estilo para los botones */
+.boton-tabla {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #404c59;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.boton-tabla:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Mueve el botón hacia arriba */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra más pronunciada */
+}
+
+/* Efecto al hacer clic en el botón */
+.boton-tabla:active {
+  background-color: #022d5b;
+  transform: translateY(1px); /* Mueve el botón hacia abajo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajusta la sombra al hacer clic */
+}
+
+/* Estilo para el botón activo */
+.boton-tabla.active {
+  background-color: #013975; /* Color para el botón seleccionado */
+  color: #fff;
+}
+
+/* Estilo para el contenido */
+.contenido-2 {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

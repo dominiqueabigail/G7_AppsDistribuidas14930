@@ -1,0 +1,10 @@
+h1 {
+  background-color: #47596d; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 20px; /* Espaciado alrededor del texto */
+  text-align: center; /* Centrando el texto */
+  font-family: 'Arial', sans-serif; /* Fuente de letra */
+  border-radius: 8px; /* Bordes redondeados */
+  margin: 0; /* Eliminar márgenes predeterminados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para darle profundidad */
+}
