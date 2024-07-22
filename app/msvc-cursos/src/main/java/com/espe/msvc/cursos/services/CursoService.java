@@ -18,6 +18,6 @@ public interface CursoService {
 
     Optional<Usuario> agregarUsuario (Usuario usuario, Long idCurso);
     Optional<Usuario> crearUsuario (Usuario usuario, Long idCurso);
-    Optional<Usuario> eliminarUsuario (Usuario usuario, Long idCurso);
+    boolean eliminarUsuario(Long usuarioId, Long idCurso);
 }
 

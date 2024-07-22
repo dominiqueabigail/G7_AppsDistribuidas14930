@@ -92,17 +92,19 @@ public class CursoController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/eliminar-usuario/{idcurso}")
-    public ResponseEntity<?> eliminarUsuario(@RequestBody Usuario usuario, @PathVariable Long idcurso) {
-        try {
-            Optional<Usuario> o = service.eliminarUsuario(usuario, idcurso);
-            if (o.isPresent()) {
-                return ResponseEntity.noContent().build();
-            }
+
+    @Autowired
+    private CursoService cursoService;
+
+    @DeleteMapping("/{cursoId}/eliminar-usuario/{usuarioId}")
+    public ResponseEntity<Void> eliminarUsuario(
+            @PathVariable Long cursoId,
+            @PathVariable Long usuarioId) {
+        boolean eliminado = cursoService.eliminarUsuario(usuarioId, cursoId);
+        if (eliminado) {
+            return ResponseEntity.noContent().build();
+        } else {
             return ResponseEntity.notFound().build();
-        } catch (FeignException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Collections.singletonMap("mensaje", "Error: " + e.getMessage()));
         }
     }
 

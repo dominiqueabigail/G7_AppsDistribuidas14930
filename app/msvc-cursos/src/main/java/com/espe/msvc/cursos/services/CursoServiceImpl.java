@@ -77,21 +77,22 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
-    public Optional<Usuario> eliminarUsuario(Usuario usuario, Long idCurso) {
+    @Transactional
+    public boolean eliminarUsuario(Long usuarioId, Long idCurso) {
         Optional<Curso> cursoOptional = repository.findById(idCurso);
         if (cursoOptional.isPresent()) {
             Curso curso = cursoOptional.get();
             CursoUsuario cursoUsuarioToRemove = curso.getCursoUsuarios().stream()
-                    .filter(cu -> cu.getUsuarioId().equals(usuario.getId()))
+                    .filter(cu -> cu.getUsuarioId().equals(usuarioId))
                     .findFirst()
                     .orElse(null);
 
             if (cursoUsuarioToRemove != null) {
-                curso.getCursoUsuarios().remove(cursoUsuarioToRemove); // Usamos el método get para acceder a la lista y remover el cursoUsuarioToRemove
+                curso.getCursoUsuarios().remove(cursoUsuarioToRemove);
                 repository.save(curso);
-                return Optional.of(usuario);
+                return true;
             }
         }
-        return Optional.empty();
+        return false;
     }
 }
