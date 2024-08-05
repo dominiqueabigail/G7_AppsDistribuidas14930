@@ -1,0 +1,272 @@
+/* Color Palette */
+:root {
+  --primary-color: #4a90e2; /* Blue */
+  --secondary-color: #50e3c2; /* Teal */
+  --background-color: #f5f7f9; /* Light Grey */
+  --text-color: #333; /* Dark Grey */
+  --border-color: #ccc; /* Darker Border */
+  --button-background: #4a90e2; /* Blue */
+  --button-text: #fff; /* White */
+  --button-hover-background: #357abd; /* Darker Blue */
+  --message-background: #fff; /* White */
+  --message-border: #d0d0d0; /* Light Grey Border */
+  --notification-background: #333; /* Dark Background */
+  --notification-text: #fff; /* White */
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input, button {
+  font-size: 1em;
+}
+
+/* Button Styles */
+button {
+  border: none;
+  padding: 12px 20px;
+  background: var(--button-background);
+  color: var(--button-text);
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: var(--button-hover-background);
+  transform: scale(1.02);
+}
+
+/* Container and Layout */
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Register Styles */
+.register {
+  position: fixed;
+  width: 400px; /* Ajusta el ancho según tus necesidades */
+  padding: 40px; /* Aumenta el padding para darle más espacio interno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--background-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+/* Chat Box Styles */
+.chat-box {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  height: 600px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  background: var(--background-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* Member List Styles */
+.member-list {
+  width: 25%;
+  padding-right: 15px;
+  border-right: 1px solid var(--border-color);
+}
+
+.member-list ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.member {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.message-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #f00; /* Color del círculo (rojo en este caso) */
+  color: #fff; /* Color del texto */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.unread {
+  font-weight: bold;
+  color: #333; /* Color de texto cuando hay mensajes nuevos */
+}
+
+
+.member.active {
+  background: var(--primary-color);
+  color: var(--button-text);
+}
+
+.member {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+.member:hover {
+  background-color: #ddd; /* Color de fondo al pasar el ratón (opcional) */
+  color: #000; /* Color del texto al pasar el ratón */
+}
+
+.message-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #f00; /* Color del círculo (rojo en este caso) */
+  color: #fff; /* Color del texto del contador */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* Chat Content Styles */
+.chat-content {
+  width: 75%;
+  padding-left: 15px;
+}
+
+/* Chat Messages Styles */
+.chat-messages {
+  height: 80%;
+  border: 1px solid var(--message-border);
+  overflow-y: auto;
+  padding: 15px;
+  background: var(--message-background);
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+/* Message Styles */
+.message {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: var(--message-background);
+  border: 1px solid var(--message-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.message.self {
+  justify-content: flex-end;
+}
+
+.message-data {
+  padding: 0 12px;
+}
+
+.avatar {
+  background-color: var(--primary-color);
+  padding: 6px 10px;
+  border-radius: 12px;
+  color: var(--button-text);
+  font-weight: bold;
+}
+
+/* Input and Send Button Styles */
+.input-message {
+  width: 90%;
+  padding: 12px;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+}
+
+.send-message {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+  margin-top: 4px; /* Espacio entre el input y el mensaje de error */
+}
+
+.send-button {
+  width: 12%;
+  margin-left: 10px;
+  border-radius: 50px;
+  background: var(--button-background);
+  color: var(--button-text);
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--notification-background);
+  color: var(--notification-text);
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.welcome-message {
+  margin-bottom: 15px; /* Espacio entre el texto y el campo de entrada */
+  font-size: 1.2em; /* Tamaño de fuente */
+  color: #333; /* Color del texto */
+}
+
+.floating-notification {
+  position: fixed; /* Usar fixed para que se mantenga en una posición fija */
+  bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336; /* Color de fondo rojo */
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Asegúrate de que esté sobre otros elementos */
+  max-width: 90%; /* Limita el ancho máximo */
+  text-align: center; /* Centra el texto */
+}
